@@ -9,19 +9,22 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        url: 'http://www.mathdad.cf',
+        url: 'http://my-ghost-blog.com',
 
-        mail: {
-            from: 'Admin <noreply@mathdad.cf>',
-            transport: 'SMTP',
-            options: {
-                service: 'Mailgun',
-                auth: {
-                    user: 'noreply@mathdad.cf', // mailgun username
-                    pass: 'sak626999'  // mailgun password
-                }
-            }
-        },
+        // Example mail config
+        // Visit http://support.ghost.org/mail for instructions
+        // ```
+        //  mail: {
+        //      transport: 'SMTP',
+        //      options: {
+        //          service: 'Mailgun',
+        //          auth: {
+        //              user: '', // mailgun username
+        //              pass: ''  // mailgun password
+        //          }
+        //      }
+        //  },
+        // ```
 
         database: {
             client: 'sqlite3',
@@ -45,18 +48,8 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://' + process.env.OPENSHIFT_APP_DNS,
-        mail: {
-            from: 'Admin <noreply@mathdad.cf>',
-            transport: 'SMTP',
-            options: {
-                service: 'Mailgun',
-                auth: {
-                    user: 'noreply@mathdad.cf', // mailgun username
-                    pass: 'sak626999'  // mailgun password
-                }
-            }
-        },
+        url: 'http://'+process.env.OPENSHIFT_APP_DNS,
+        mail: {},
         database: {
             client: 'sqlite3',
             connection: {
@@ -99,11 +92,11 @@ config = {
         database: {
             client: 'mysql',
             connection: {
-                host: '127.0.0.1',
-                user: 'root',
-                password: '',
-                database: 'ghost_testing',
-                charset: 'utf8'
+                host     : '127.0.0.1',
+                user     : 'root',
+                password : '',
+                database : 'ghost_testing',
+                charset  : 'utf8'
             }
         },
         server: {
@@ -120,11 +113,11 @@ config = {
         database: {
             client: 'pg',
             connection: {
-                host: '127.0.0.1',
-                user: 'postgres',
-                password: '',
-                database: 'ghost_testing',
-                charset: 'utf8'
+                host     : '127.0.0.1',
+                user     : 'postgres',
+                password : '',
+                database : 'ghost_testing',
+                charset  : 'utf8'
             }
         },
         server: {
