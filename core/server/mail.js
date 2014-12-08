@@ -35,7 +35,7 @@ GhostMailer.prototype.from = function () {
     // If we don't have a from address at all
     if (!from) {
         // Default to ghost@[blog.url]
-        from = 'ghost@' + this.getDomain();
+        from = 'noreply@' + this.getDomain();
     }
 
     // If we do have a from address, and it's just an email
